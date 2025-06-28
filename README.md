@@ -19,8 +19,8 @@ This repository contains details about the design, evolution, and continuous dev
 - [Advantages and Disadvantages](#advantages-and-disadvantages)
 - [Choice of Components](#choice-of-components)
 - [Math (with diagrams)](#math)
-- [Obstacle Management](#obstacle-management)
-- [Code Style Guidelines](#code-style-guidelines)
+- [Strategy](#Strategy)
+- [Code](#Code)
 - [Special Thanks](#special-thanks)
 
 ---
@@ -32,15 +32,16 @@ This repository contains details about the design, evolution, and continuous dev
 ## Final Design
 
 ## Advantages and Disadvantages
-- Advantages and disadvantages of overall design  
+- Advantages and disadvantages of the overall design  
 - Only the advantages of the final design
 
 ## Choice of Components
 
 ## Math
 
-## Obstacle Management
+## Strategy
+Rather than using the ultrasonic sensor, we have decided to use the Raspberry Pi camera, utilising the contours of the walls to execute a wall following program. When the robot detects an obstacle, it utilises the obstacle as a reference to wall follow between the wall and the obstacle. For turning, we use the blue or orange lines on the game field to take a turn, and if the next obstacle is too close, we will take a dummy reverse and resume our wall following code
 
-## Code Style Guidelines
+## Code
 
 ## Special Thanks
