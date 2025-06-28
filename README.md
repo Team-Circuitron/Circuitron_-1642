@@ -18,7 +18,7 @@ This repository contains details about the design, evolution, and continuous dev
 - [Final Design](#final-design)
 - [Advantages and Disadvantages](#advantages-and-disadvantages)
 - [Choice of Components](#choice-of-components)
-- [Math (with diagrams)](#math-with-diagrams)
+- [Math (with diagrams)](#math)
 - [Obstacle Management](#obstacle-management)
 - [Code Style Guidelines](#code-style-guidelines)
 - [Special Thanks](#special-thanks)
@@ -37,7 +37,7 @@ This repository contains details about the design, evolution, and continuous dev
 
 ## Choice of Components
 
-## Math (with diagrams)
+## Math
 
 ## Obstacle Management
 
