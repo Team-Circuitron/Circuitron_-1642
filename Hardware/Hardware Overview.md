@@ -1,56 +1,96 @@
-🤖 Team Circuitron: Autonomous Robot
+# Hardware Overview
 
 
+---
 
+## Table of Contents
+1. [Hardware Overview](#hardware-overview)
+2. [Processing Unit](#processing-unit)
+3. [Vision System](#vision-system)
+4. [Locomotion](#locomotion)
+5. [Steering System](#steering-system)
+6. [Power Management](#power-management)
+7. [Chassis](#chassis)
+8. [License](#license)
 
+---
 
-A professional-grade autonomous robotics platform designed for performance, scalability, and rapid prototyping.
+## Hardware Overview
 
-📑 Table of Contents
+Our robotic platform is engineered with a modular hardware architecture  
+to deliver high performance, flexibility, and support iterative development cycles.
 
-Hardware Overview
+---
 
-Processing Unit
+## Processing Unit
 
-Vision System
+**Raspberry Pi 4 Model B**
 
-Locomotion
+- CPU: Quad-core Cortex-A72 (ARM v8)
+- RAM: 2GB / 4GB / 8GB (depending on configuration)
+- Interfaces: GPIO, USB, HDMI, CSI (camera)
 
-Steering System
+This board supports seamless integration of sensor arrays and enables  
+Real-time control algorithms essential for autonomous navigation and decision-making.
 
-Power Management
+---
 
-Chassis
+## Vision System
 
+**Camera:** Raspberry Pi Camera Module
 
+**Key Features:**
+- Obstacle detection
+- Line tracking
+- Environmental mapping
+- Native compatibility with the Raspberry Pi ecosystem
 
- Hardware Overview
+---
 
-Our robotic platform is engineered with a modular hardware architecture to deliver high performance, flexibility, and support iterative development cycles.
+## Locomotion
 
- Processing Unit
+**Wheels:** LEGO wheels for modularity and superior material quality  
+**Motor:** [Insert Model] DC motor  
 
-The computational backbone of the system is the Raspberry Pi 4 Model B, chosen for its quad-core processor and versatile GPIO interface. This board supports seamless integration of sensor arrays and enables real-time control algorithms essential for autonomous navigation and decision-making.
+**Optimised for:**
+- Size
+- Weight
+- Torque output
+- Efficient mobility across diverse terrains
 
- Vision System
+---
 
-We employ the Raspberry Pi Camera Module, selected for its native compatibility with the Raspberry Pi ecosystem. This camera enables obstacle detection, line tracking, and environmental mapping, forming a critical component of the perception subsystem.
+## Steering System
 
-Locomotion
+**Servo Motor:** [Insert Model] high-precision servo  
 
-The locomotion system uses LEGO wheels, chosen for their superior material quality and precise engineering. Their modularity allows rapid iterations of mechanical designs.
+**Features:**
+- Responsive and accurate control
+- Reliable navigation in dynamic environments
 
-The chassis is powered by a [Insert Model] DC motor, optimized for size, weight, and torque output, ensuring efficient mobility.
+---
 
-Steering System
+## Power Management
 
-Steering is controlled by a [Insert Model] high-precision servo motor, delivering responsive and accurate control critical for navigating dynamic environments.
+**Buck Converter:** [Insert Model]  
+**Input Voltage:** [Insert Voltage]V  
 
-Power Management
+**Features:**
+- Steps down the voltage to the required levels for all subsystems
+- Ensures stable operation
+- Protects sensitive electronics
 
-A [Insert Model] buck converter manages power delivery, stepping down from [Insert Voltage]V to levels required by all subsystems. This ensures stable operation and protects sensitive electronics.
+---
 
-Chassis
+## Chassis
 
-The structural framework leverages a LEGO-based chassis, chosen for its modularity and ease of customization. This design supports quick repositioning of components and continuous mechanical optimization.
+**Framework:** LEGO-based chassis  
+
+**Benefits:**
+- Modularity for rapid iterations
+- Ease of customisation
+- Supports quick repositioning of components and continuous mechanical optimisation
+
+---
+
 
