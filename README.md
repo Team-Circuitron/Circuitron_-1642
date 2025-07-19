@@ -135,7 +135,73 @@ Real-time control algorithms essential for autonomous navigation and decision-ma
 ## Math
 
 ## Strategy
-Rather than using the ultrasonic sensor, we have decided to use the Raspberry Pi camera, utilising the contours of the walls to execute a wall-following program. When the robot detects an obstacle, it uses that as a reference to wall-follow between the wall and the obstacle. For turning, we use the blue or orange lines on the game field to take a turn, and if the next obstacle is too close, we will take a dummy reverse and resume our wall-following code.
+# Autonomous Robot Navigation Strategy
+
+A navigation strategy for an autonomous robotics platform utilizing camera vision, PID control, and multi-sensor integration.
+
+---
+
+
+##  Core Strategy
+
+### 1. Initialization
+- Start the system and initialize `Round_Count = 0`.
+- Check if `Round_Count >= 24`. 
+  - **If YES:** Terminate the process.
+  - **If NO:** Proceed to data collection.
+
+### 2. Data Collection
+- Capture real-time camera data to analyze the surroundings.
+- Detect environmental features (walls, objects, magnets, lines).
+
+### 3. Object and Obstacle Handling
+- **Red/Green Object Detection:**
+  - If detected, determine object positions relative to the robot.
+  - For a single object: Register position (left/right) and adjust path.
+  - For two objects:
+    - Compute the distance between them.
+    - **If gap feasible:** Navigate between objects using reverse PID.
+    - **If gap not feasible:** Trigger a pre-set parking algorithm.
+- **Magnet Detection:**
+  - If magnets are detected, apply PID logic to center the robot.
+
+### 4. Wall Following
+- **Black Wall Detection:**
+  - **If walls detected:** Apply PID logic to center between two walls.
+  - **If no walls detected:** Apply PID to follow a single wall, keeping error = 0.
+
+### 5. Navigation and Control
+- Continuously use PID to:
+  - Maintain drive system stability.
+  - Adjust direction dynamically.
+  - Ensure smooth motor operation during transitions.
+
+### 6. Line Detection and Round Management
+- Use color sensor to detect orange/blue lines (checkpoints).
+- Upon detection:
+  - **If value detected:** Keep `Round_Count` unchanged; keep sensor active.
+  - **If no value detected:** Increment `Round_Count` by 1 and disable sensor for a fixed time.
+
+---
+
+##  Key Algorithms
+
+1. **PID Wall Following:**
+   Maintains robot alignment with reference walls or center path.
+2. **Reverse PID Obstacle Navigation:**
+   Used for moving between detected objects or obstacle pairs.
+3. **Round Counter Management:**
+   Tracks progress and manages sensor activation.
+
+---
+
+##  Termination
+The system stops once `Round_Count >= 24`, signaling the completion of all operational rounds.
+
+---
+
+##  Notes
+This strategy was developed to ensure robust navigation and adaptability to dynamic environments during autonomous operation.
 
 ## Code
 
