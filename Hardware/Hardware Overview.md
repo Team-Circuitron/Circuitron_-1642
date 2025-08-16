@@ -1,96 +1,81 @@
-# Hardware Overview
+# 🤖 Team Circuitron: Autonomous Robot
+
+A professional-grade autonomous robotics platform designed for performance, scalability, and competition at WRO Future Engineers.  
+
+## 📑 Table of Contents
+- [Overview](#overview)
+- [Hardware Overview](#hardware-overview)
+  - [Processing Unit](#processing-unit)
+  - [Locomotion](#locomotion)
+  - [Motor Driver](#motor-driver)
+  - [Power Management](#power-management)
+  - [Sensors](#sensors)
+  - [Camera System](#camera-system)
+  - [User Interface](#user-interface)
+- [Dimensions & Weight](#dimensions--weight)
+- [Advantages](#advantages)
 
 
 ---
 
-## Table of Contents
-1. [Hardware Overview](#hardware-overview)
-2. [Processing Unit](#processing-unit)
-3. [Vision System](#vision-system)
-4. [Locomotion](#locomotion)
-5. [Steering System](#steering-system)
-6. [Power Management](#power-management)
-7. [Chassis](#chassis)
-8. [License](#license)
+## Overview
+Our robot is built to balance modularity, durability, and efficiency for real-world robotics challenges. The system integrates advanced hardware with a clean software stack to ensure smooth operation, quick iteration, and easy debugging during competitions.  
 
 ---
 
 ## Hardware Overview
 
-Our robotic platform is engineered with a modular hardware architecture  
-to deliver high performance, flexibility, and support iterative development cycles.
+### Processing Unit
+- **Raspberry Pi Zero**  
+Acts as the brain of the robot, managing camera input, motor control, and sensor integration.  
+Compact yet powerful enough for real-time decision-making.  
+
+### Locomotion
+- **Custom DC Motor (8000 rpm at 3.7v)**  
+- **Coupled with TB6612FNG motor driver**  
+Provides precise torque and control for dynamic movement in competition.  
+
+### Motor Driver
+- **TB6612FNG Dual H-Bridge Driver**  
+Handles motor currents efficiently while minimizing heat.  
+Supports smooth acceleration and braking.  
+
+### Power Management
+- **Buck Converter (5V, 3A)**  
+Ensures stable voltage delivery to sensitive components such as Raspberry Pi, IMU, and sensors.  
+
+### Sensors
+- **Limit Switch**  
+Used for collision detection
+- **9-axis IMU (Gyroscope + Accelerometer + Magnetometer)**  
+Provides orientation and stability feedback.  
+
+### Camera System
+- **Raspberry Pi Camera Module**  
+Essential for wall detection, object detection, and parking.  
+
+### User Interface
+- **Push Buttons**  
+Allow reset or emergency stop functionality.  
 
 ---
 
-## Processing Unit
+## Dimensions & Weight
+- **Weight:** ~650 g  
+- **Dimensions:** ~16 cm (L) × 12 cm (W) × 10 cm (H)
 
-**Raspberry Pi 4 Model B**
-
-- CPU: Quad-core Cortex-A72 (ARM v8)
-- RAM: 2GB / 4GB / 8GB (depending on configuration)
-- Interfaces: GPIO, USB, HDMI, CSI (camera)
-
-This board supports seamless integration of sensor arrays and enables  
-Real-time control algorithms essential for autonomous navigation and decision-making.
+Compact enough for agility, yet stable for high-speed operation.  
 
 ---
 
-## Vision System
-
-**Camera:** Raspberry Pi Camera Module
-
-**Key Features:**
-- Obstacle detection
-- Line tracking
-- Environmental mapping
-- Native compatibility with the Raspberry Pi ecosystem
-
----
-
-## Locomotion
-
-**Wheels:** LEGO wheels for modularity and superior material quality  
-**Motor:** [Insert Model] DC motor  
-
-**Optimised for:**
-- Size
-- Weight
-- Torque output
-- Efficient mobility across diverse terrains
-
----
-
-## Steering System
-
-**Servo Motor:** [Insert Model] high-precision servo  
-
-**Features:**
-- Responsive and accurate control
-- Reliable navigation in dynamic environments
-
----
-
-## Power Management
-
-**Buck Converter:** [Insert Model]  
-**Input Voltage:** [Insert Voltage]V  
-
-**Features:**
-- Steps down the voltage to the required levels for all subsystems
-- Ensures stable operation
-- Protects sensitive electronics
-
----
-
-## Chassis
-
-**Framework:** LEGO-based chassis  
-
-**Benefits:**
-- Modularity for rapid iterations
-- Ease of customisation
-- Supports quick repositioning of components and continuous mechanical optimisation
-
----
-
+## Advantages
+- Lightweight and portable for quick field setup.  
+- Modular hardware design for easy replacements.  
+- Reliable motor driver ensures consistent performance.  
+- Raspberry Pi Zero offers a balance of performance and size.  
+- Stable 5V 3A power system prevents brownouts.  
+- IMU provides accurate feedback for autonomous navigation.  
+- Camera enables vision-based strategies.  
+- User-friendly with push buttons for control.  
+- Collision safety with built-in limit switch.  
 
