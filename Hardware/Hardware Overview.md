@@ -1,6 +1,5 @@
-# 🤖 Team Circuitron: Autonomous Robot
-
-A professional-grade autonomous robotics platform designed for performance, scalability, and competition at WRO Future Engineers.  
+# HARDWARE OVERVIEW
+Overview of the hardware used in the robot
 
 ## 📑 Table of Contents
 - [Overview](#overview)
@@ -37,7 +36,7 @@ Provides precise torque and control for dynamic movement in competition.
 
 ### Motor Driver
 - **TB6612FNG Dual H-Bridge Driver**  
-Handles motor currents efficiently while minimizing heat.  
+Handles motor currents efficiently while minimising heat.  
 Supports smooth acceleration and braking.  
 
 ### Power Management
