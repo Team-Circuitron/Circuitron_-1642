@@ -181,15 +181,15 @@ Compact enough for agility while maintaining balance during turns.
 
 ---
 ## Why did we use a custom motor
-Our motor is based on the D360 DC motor with a custom gearbox. We used this motor as we could not find any other motor which had appriopriate speed, torque and weight. We found that using a custom motor was the best choice.
+Our motor is based on the D360 DC motor with a custom gearbox. We used this motor because we could not find any other motor that had the appropriate speed, torque, and weight. We found that using a custom motor was the best choice.
 
 ## Why did we use a white cover
-Frequently our camera would detect the electronics on our pcb as obstacles or walls, so we found that the best way to overcome this is to put a white cover over our pcb so that our camera does not get confused with the colors on our pcb.
+Frequently, our camera would detect the electronics on our PCB as obstacles or walls. Therefore, we found that the best way to overcome this was to put a white cover over our PCB, so that our camera would not be confused by the colours on our PCB.
 
-## Why did we feel that lego was the best option
-The lego chassis is completly custom designed from scratch and we found it was the best option as it gave us the flexibilty to use whichever parts we want and the lego chassis is extremly modular in comparison to other of the shelf options. Lego parts are also strong and the chassis is extremly easy to change or repair at a moments notice in comparison to off the shelf options.
+## Why did we feel that LEGO was the best option
+The lego chassis is completly custom designed from scratch, and we found it was the best option as it gave us the flexibility to use whichever parts we want and the lego chassis is extremly modular in comparison to other of the shelf options. Lego parts are also strong and the chassis is extremly easy to change or repair at a moments notice in comparison to off the shelf options.
 
 
 ##CAD and Lego
-The instructions to build our robot have been given in this repository [📄 Robot Assembly Instructions](Robot_Assembly_Instructions.pdf). We have also attached an Excel sheet containing all the lego parts required to make the robot. We also have attached the CAD files, the cover and the custom housing in this repository. The complete CAD of the robot is also attached in a .io file format as well as .obj.
+The instructions to build our robot have been given in this repository [📄 Robot Assembly Instructions](Robot_Assembly_Instructions.pdf). We have also attached an Excel sheet containing all the lego parts required to make the robot. We also have attached the CAD files, the cover and the custom housing in this repository. The complete CAD of the robot is also attached in a .io file format as well as .stl as the cad was made in lego studio. The cad for the custom parts is given in STEP format as that was made in onshape.
  
