@@ -1,80 +1,182 @@
 # HARDWARE OVERVIEW
-Overview of the hardware used in the robot
+Detailed overview of the hardware architecture of our WRO Future Engineers robot.
+
+---
 
 ## 📑 Table of Contents
 - [Overview](#overview)
 - [Hardware Overview](#hardware-overview)
   - [Processing Unit](#processing-unit)
-  - [Locomotion](#locomotion)
+  - [Locomotion & Actuators](#locomotion--actuators)
   - [Motor Driver](#motor-driver)
   - [Power Management](#power-management)
   - [Sensors](#sensors)
   - [Camera System](#camera-system)
+  - [Custom Electronics & PCB](#custom-electronics--pcb)
+  - [Mechanical Structure](#mechanical-structure)
   - [User Interface](#user-interface)
 - [Dimensions & Weight](#dimensions--weight)
+- [Bill of Materials](#bill-of-materials)
 - [Advantages](#advantages)
-
 
 ---
 
 ## Overview
-Our robot is built to balance modularity, durability, and efficiency for real-world robotics challenges. The system integrates advanced hardware with a clean software stack to ensure smooth operation, quick iteration, and easy debugging during competitions.  
+Our robot is designed around **stability, modularity, and speed**.  
+The hardware integrates:
+- High-efficiency DC motors with optimized gearboxes  
+- Raspberry Pi 4 for advanced vision and decision-making  
+- Multiple feedback sensors (IMU, IR, Limit Switches)  
+- Custom 3D-printed and LEGO-based chassis for compactness and modularity  
+- Stable power distribution with buck converters and Li-ion batteries  
+
+This ensures consistent performance across the **Obstacle Challenge** and **Open Challenge**.
 
 ---
 
 ## Hardware Overview
 
 ### Processing Unit
-- **Raspberry Pi Zero**  
-Acts as the brain of the robot, managing camera input, motor control, and sensor integration.  
-Compact yet powerful enough for real-time decision-making.  
+- **Raspberry Pi 4B (4GB RAM)**  
+  - Central brain of the robot.  
+  - Runs computer vision (OpenCV) and control algorithms in real time.  
+  - Handles communication with sensors via I²C and GPIO.  
+  - Selected for its balance of processing power, cost, and community support.  
 
-### Locomotion
-- **Custom DC Motor (8000 rpm at 3.7v)**  
-- **Coupled with TB6612FNG motor driver**  
-Provides precise torque and control for dynamic movement in competition.  
+---
+
+### Locomotion & Actuators
+The robot uses a carefully tested drive + steering system optimized for torque-speed balance.
+
+- **Drive Motor: D360 Brushed DC Motor + 22:1 Gearbox**  
+  - Provides sufficient torque for speed and maneuverability.  
+  - Mounted in a **3D-printed housing** for vibration dampening and stable alignment.  
+
+- **Steering: REV Robotics 2000 Series Dual Mode Servo**  
+  - Dual functionality: can operate as a servo (angular control) or continuous motor.  
+  - Provides precise steering and smooth turning radius.  
+  - Mounted with GoBilda servo frame for durability.  
+
+Other motors considered during iterations:  
+- **N20 DC Motor** → lightweight but insufficient torque under load.  
+- **REV NEO 550 Brushless** → powerful, but bulky and harder to tune with Spark MAX.  
+- **LEGO Medium Motor** → easy integration but limited performance.  
+
+Final choice balanced **speed, torque, and compactness** for competition.
+
+---
 
 ### Motor Driver
 - **TB6612FNG Dual H-Bridge Driver**  
-Handles motor currents efficiently while minimising heat.  
-Supports smooth acceleration and braking.  
+  - Drives the brushed DC motor.  
+  - Supports sufficient current with minimal heating.  
+  - Provides braking and smooth acceleration.  
+
+---
 
 ### Power Management
-- **Buck Converter (5V, 3A)**  
-Ensures stable voltage delivery to sensitive components such as Raspberry Pi, IMU, and sensors.  
+A robust power system ensures stability and prevents brownouts.
+
+- **7.4V Li-ion Battery Pack (2S, 1300 mAh, 25C)**  
+  - High energy density, rechargeable, stable voltage.  
+
+- **Buck Converters**  
+  - **5V 3A Buck Converter**: powers Raspberry Pi and sensors.  
+  - **USB Step-Down Converter**: additional regulated output for Pi Camera and low-voltage peripherals.  
+  - Efficient DC-DC regulation ensures minimal energy loss and protects sensitive electronics.  
+
+---
 
 ### Sensors
-- **Limit Switch**  
-Used for collision detection
-- **9-axis IMU (Gyroscope + Accelerometer + Magnetometer)**  
-Provides orientation and stability feedback.  
+The robot uses a combination of sensors for feedback and environment perception:
+
+1. **Raspberry Pi Camera Module 3 (Wide)**  
+   - Vision system for obstacle detection, wall following, lane recognition, and parking.  
+   - Works with OpenCV for HSV-based color detection (red/green pillars, black walls, blue/orange lap lines, magenta parking zone).  
+
+2. **BNO055 IMU**  
+   - 9-axis (Gyroscope + Accelerometer + Magnetometer).  
+   - Provides orientation for stable steering corrections.  
+   - Runs built-in sensor fusion for accurate yaw, pitch, and roll readings.  
+
+3. **IR Sensors (×4)**  
+   - Used for short-range obstacle detection and alignment during parking.  
+
+4. **VEX Limit Switches**  
+   - Detect physical collisions or if robot gets stuck.  
+   - Provides fail-safe redundancy.  
+
+---
 
 ### Camera System
-- **Raspberry Pi Camera Module**  
-Essential for wall detection, object detection, and parking.  
+- **Raspberry Pi Camera Module 3 (Wide-Angle)**  
+  - Mounted on the front of the robot.  
+  - Wide field of view enables simultaneous wall, obstacle, and marker detection.  
+  - Paired with OpenCV for real-time image processing.  
+
+---
+
+### Custom Electronics & PCB
+- Designed a **custom PCB** around the Raspberry Pi.  
+- Functions:  
+  - Power distribution from battery to buck converters.  
+  - Organized sensor and motor connections.  
+  - Reduced wiring complexity and improved reliability.  
+
+---
+
+### Mechanical Structure
+- **Chassis**: hybrid of LEGO Technic and 3D-printed parts.  
+- **Design goals**: compact, modular, easy to modify.  
+- **3D-Printed Custom Components**:  
+  - Motor mounts for vibration reduction.  
+  - Camera housing to block false detections from internal circuits.  
+  - Protective covers for sensitive electronics.  
+
+---
 
 ### User Interface
 - **Push Buttons**  
-Allow reset or emergency stop functionality.  
+  - Start/Stop robot.  
+  - Emergency reset if required.  
 
 ---
 
 ## Dimensions & Weight
-- **Weight:** ~650 g  
-- **Dimensions:** ~16 cm (L) × 12 cm (W) × 10 cm (H)
+- **Weight**: ~650–700 g  
+- **Dimensions**: ~16 cm (L) × 12 cm (W) × 10 cm (H)  
 
-Compact enough for agility, yet stable for high-speed operation.  
+Compact enough for agility while maintaining balance during turns.
+
+---
+
+## Bill of Materials
+| Component | Quantity | Source/Link |
+|-----------|----------|-------------|
+| Raspberry Pi 4B (4GB) | 1 | [Robu.in](https://robu.in/product/raspberry-pi-4-model-b-with-4-gb-ram/) |
+| Raspberry Pi Camera Module 3 (Wide) | 1 | [Robu.in](https://robu.in/product/raspberry-pi-camera-module-3-wide/) |
+| D360 Brushed DC Motor + Gearbox | 1 | [Temu](https://www.temu.com/goods_snapshot.html?goods_id=601099518898704) |
+| TB6612FNG Motor Driver | 1 | [Robu.in](https://robu.in/product/motor-driver-tb6612fng-module) |
+| REV 2000 Series Servo | 1 | [GoBilda](https://www.gobilda.com/2000-series-dual-mode-servo-25-4-super-speed/) |
+| GoBilda Servo Mount | 1 | [GoBilda](https://www.gobilda.com/1802-series-servo-frame-43mm-width-for-standard-size-servos/) |
+| 7.4V 2S Li-ion Battery Pack (1300 mAh, 25C) | 1 | [Robu.in](https://robu.in/product/orange-1300mah-2s-25c-7-4-v-lithium-polymer-battery-pack-li-po/) |
+| Buck Converter (5V, 3A) | 1 | [Robu.in](https://robu.in/product/ultra-small-size-dc-dc-5v-3a-bec-power-supply-buck-step-down-module/) |
+| USB Buck Converter | 1 | [Robu.in](https://robu.in/product/dc-to-dc-6-24v-to-5v-usb-output-step-down-power-charger-buck-converter/) |
+| BNO055 IMU | 1 | [ThinkRobotics](https://thinkrobotics.com/products/9-dof-absolute-orientation-bno055-sensor) |
+| VEX Limit Switches | 2 | [VEX Robotics](https://www.vexrobotics.com/276-2174.html) |
+| IR Sensors | 4 | [Robu.in](https://robu.in/product/ir-infrared-obstacle-avoidance-sensor-module/) |
+| LEGO Technic Parts | Multiple | — |
+| 3D Printed Parts | Custom | — |
 
 ---
 
 ## Advantages
-- Lightweight and portable for quick field setup.  
-- Modular hardware design for easy replacements.  
-- Reliable motor driver ensures consistent performance.  
-- Raspberry Pi Zero offers a balance of performance and size.  
-- Stable 5V 3A power system prevents brownouts.  
-- IMU provides accurate feedback for autonomous navigation.  
-- Camera enables vision-based strategies.  
-- User-friendly with push buttons for control.  
-- Collision safety with built-in limit switch.  
+- **High Performance**: Custom D360 motor with gearbox tuned for speed + torque.  
+- **Vision-Driven**: Pi Camera enables wall following, lap counting, and obstacle navigation.  
+- **Failsafe Redundancy**: Limit switches prevent deadlocks if robot gets stuck.  
+- **Stable Power**: 5V regulation avoids Pi brownouts.  
+- **Compact & Modular**: Hybrid LEGO + 3D printed structure supports quick modifications.  
+- **Reliable Navigation**: BNO055 IMU stabilizes turns and corrections.  
+- **Consistent Parking**: IR sensors ensure accurate parallel parking.  
 
+---
