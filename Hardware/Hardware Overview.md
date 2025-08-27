@@ -24,7 +24,7 @@ Detailed overview of the hardware architecture of our WRO Future Engineers robot
 ## Overview
 Our robot is designed around **stability, modularity, and speed**.  
 The hardware integrates:
-- High-efficiency DC motors with optimized gearboxes  
+- High-efficiency DC motors with optimised gearboxes  
 - Raspberry Pi 4 for advanced vision and decision-making  
 - Multiple feedback sensors (IMU, IR, Limit Switches)  
 - Custom 3D-printed and LEGO-based chassis for compactness and modularity  
@@ -46,15 +46,15 @@ This ensures consistent performance across the **Obstacle Challenge** and **Open
 ---
 
 ### Locomotion & Actuators
-The robot uses a carefully tested drive + steering system optimized for torque-speed balance.
+The robot uses a carefully tested drive + steering system optimised for torque-speed balance.
 
 - **Drive Motor: D360 Brushed DC Motor + 22:1 Gearbox**  
-  - Provides sufficient torque for speed and maneuverability.  
+  - Provides sufficient torque for speed and manoeuvrability.  
   - Mounted in a **3D-printed housing** for vibration dampening and stable alignment.  
 
 - **Steering: REV Robotics 2000 Series Dual Mode Servo**  
-  - Dual functionality: can operate as a servo (angular control) or continuous motor.  
-  - Provides precise steering and smooth turning radius.  
+  - Dual functionality: can operate as a servo (angular control) or a continuous motor.  
+  - Provides precise steering and a smooth turning radius.  
   - Mounted with GoBilda servo frame for durability.  
 
 Other motors considered during iterations:  
@@ -103,7 +103,7 @@ The robot uses a combination of sensors for feedback and environment perception:
    - Used for short-range obstacle detection and alignment during parking.  
 
 4. **VEX Limit Switches**  
-   - Detect physical collisions or if robot gets stuck.  
+   - Detect physical collisions or if the robot gets stuck.  
    - Provides fail-safe redundancy.  
 
 ---
@@ -117,10 +117,10 @@ The robot uses a combination of sensors for feedback and environment perception:
 ---
 
 ### Custom Electronics & PCB
-- Designed a **custom PCB** around the Raspberry Pi.  
+- Soldered a zero board to ensure strong connections and reliability 
 - Functions:  
   - Power distribution from battery to buck converters.  
-  - Organized sensor and motor connections.  
+  - Organised sensor and motor connections.  
   - Reduced wiring complexity and improved reliability.  
 
 ---
@@ -173,10 +173,23 @@ Compact enough for agility while maintaining balance during turns.
 ## Advantages
 - **High Performance**: Custom D360 motor with gearbox tuned for speed + torque.  
 - **Vision-Driven**: Pi Camera enables wall following, lap counting, and obstacle navigation.  
-- **Failsafe Redundancy**: Limit switches prevent deadlocks if robot gets stuck.  
+- **Failsafe Redundancy**: Limit switches prevent deadlocks if the robot gets stuck.  
 - **Stable Power**: 5V regulation avoids Pi brownouts.  
 - **Compact & Modular**: Hybrid LEGO + 3D printed structure supports quick modifications.  
 - **Reliable Navigation**: BNO055 IMU stabilizes turns and corrections.  
 - **Consistent Parking**: IR sensors ensure accurate parallel parking.  
 
 ---
+## Why did we use a custom motor
+Our motor is based on the D360 DC motor with a custom gearbox. We used this motor as we could not find any other motor which had appriopriate speed, torque and weight. We found that using a custom motor was the best choice.
+
+## Why did we use a white cover
+Frequently our camera would detect the electronics on our pcb as obstacles or walls, so we found that the best way to overcome this is to put a white cover over our pcb so that our camera does not get confused with the colors on our pcb.
+
+## Why did we feel that lego was the best option
+The lego chassis is completly custom designed from scratch and we found it was the best option as it gave us the flexibilty to use whichever parts we want and the lego chassis is extremly modular in comparison to other of the shelf options. Lego parts are also strong and the chassis is extremly easy to change or repair at a moments notice in comparison to off the shelf options.
+
+
+##CAD and Lego
+The instructions to build our robot have been given in this repository [📄 Robot Assembly Instructions](Robot_Assembly_Instructions.pdf). We have also attached an Excel sheet containing all the lego parts required to make the robot. We also have attached the CAD files, the cover and the custom housing in this repository. The complete CAD of the robot is also attached in a .io file format as well as .obj.
+ 
