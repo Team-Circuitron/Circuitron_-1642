@@ -191,5 +191,5 @@ The lego chassis is completly custom designed from scratch, and we found it was 
 
 
 ##CAD and Lego
-The instructions to build our robot have been given in this repository [📄 Robot Assembly Instructions](Robot_Assembly_Instructions.pdf). We have also attached an Excel sheet containing all the lego parts required to make the robot. We also have attached the CAD files, the cover and the custom housing in this repository. The complete CAD of the robot is also attached in a .io file format as well as .stl as the cad was made in lego studio. The cad for the custom parts is given in STEP format as that was made in onshape.
+The instructions to build our robot have been given in this repository [📄 Robot Assembly Instructions](Robot_Assembly_Instructions.pdf). We have also attached an Excel sheet containing all the LEGO parts required to make the robot. We have also attached the CAD files, the cover and the custom housing in this repository. The complete CAD of the robot is also attached in a .io file format, as the cad was made in lego studio. The cad for the custom parts is given in STEP format, as that was made in onshape.
  
