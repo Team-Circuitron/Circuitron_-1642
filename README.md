@@ -14,23 +14,21 @@ This repository contains details about the design, evolution, and continuous dev
 
 ## Table of Contents
 
-- `t-photos` : Contains 2 photos of the team, including an official and a funny photo  
-- `v-photos` : Contains 6 photos of the vehicle from all sides, including top and bottom views  
-- `video` : Contains a `video.md` file linking to a video showing the robot in action  
-- `Hardware` : Includes hardware overview, design process, final design, and component choices  
-- `Code` : Includes all source code controlling the vehicle's behavior  
-- `Strategy` : Explanation of wall-following logic and decision-making approach  
-- `models` *(optional)* : Files for 3D printing, laser cutting, or CNC (if applicable)  
-- `other` *(optional)* : Supporting documents like connection instructions, datasets, specs  
-- `special-thanks` : Acknowledgments and credits
+- `t-photos`: Contains 2 photos of the team, including an official and a funny photo  
+- `v-photos`: Contains 6 photos of the vehicle from all sides, including top and bottom views  
+- `video`: Contains a `video.md` file linking to a video showing the robot in action  
+- `Hardware`  Includes hardware overview, design process, final design, and component choices  
+- `Code`: Includes all source code controlling the vehicle's behaviour 
+- `Strategy`: Explanation of wall-following logic and decision-making approach  
+- `models`  Files for 3D printing, laser cutting, or CNC (if applicable)  
+- `other`: Supporting documents like connection instructions, datasets, specs  
+- `special-thanks`  Acknowledgements and credits
 
 ---
+## Engineering Notebook
+Our engineering notebook contains more information about our robot and can be found here:
 
 ## Hardware Overview
-
-# Hardware Overview
-
-
 ---
 
 ## Table of Contents
@@ -43,9 +41,7 @@ This repository contains details about the design, evolution, and continuous dev
 7. [Chassis](#chassis)
 8. [License](#license)
 
----
 
-## Hardware Overview
 
 Our robotic platform is engineered with a modular hardware architecture  
 to deliver high performance, flexibility, and support iterative development cycles.
