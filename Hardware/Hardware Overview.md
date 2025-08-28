@@ -121,7 +121,8 @@ The robot uses a combination of sensors for feedback and environment perception:
 - Functions:  
   - Power distribution from battery to buck converters.  
   - Organised sensor and motor connections.  
-  - Reduced wiring complexity and improved reliability.  
+  - Reduced wiring complexity and improved reliability.
+Picture of the Circuit diagram is attached
 
 ---
 
