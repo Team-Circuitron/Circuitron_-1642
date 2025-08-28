@@ -61,7 +61,7 @@ to deliver high performance, flexibility, and support iterative development cycl
 - Interfaces: GPIO, USB, HDMI, CSI (camera)
 
 This board supports seamless integration of sensor arrays and enables  
-Real-time control algorithms essential for autonomous navigation and decision-making.
+Real-time control algorithms are essential for autonomous navigation and decision-making.
 
 ---
 
@@ -80,7 +80,7 @@ Real-time control algorithms essential for autonomous navigation and decision-ma
 ## Locomotion
 
 **Wheels:** LEGO wheels for modularity and superior material quality  
-**Motor:** [Insert Model] DC motor  
+**Motor:** D360 DC motor  
 
 **Optimised for:**
 - Size
@@ -121,88 +121,16 @@ Real-time control algorithms essential for autonomous navigation and decision-ma
 - Ease of customisation
 - Supports quick repositioning of components and continuous mechanical optimisation
 
----
-## Design
 
-## Final Design
-
-## Advantages and Disadvantages
-- Advantages and disadvantages of the overall design  
-- Only the advantages of the final design
-
-## Choice of Components
-
-## Math
 
 ## Strategy
-# Autonomous Robot Navigation Strategy
+Open Challenge Strategy
+The Open Challenge begins with the robot aligning to the nearest wall and determining its driving orientation through initial line detection, where a blue line initiates anticlockwise motion and an orange line initiates clockwise motion. The robot applies wall-following algorithms to maintain a central path while incrementally counting laps using blue and orange corner lines, incorporating a debounce delay to prevent multiple counts per pass. Upon completion of three laps, confirmed by twelve line detections, the robot transitions into parking mode. It follows the outer black wall until detecting a pink wall, where it uses IMU feedback for angular correction and executes a precise parallel parking maneuver.
 
-A navigation strategy for an autonomous robotics platform utilizing camera vision, PID control, and multi-sensor integration.
-
----
-
-
-##  Core Strategy
-
-### 1. Initialization
-- Start the system and initialize `Round_Count = 0`.
-- Check if `Round_Count >= 24`. 
-  - **If YES:** Terminate the process.
-  - **If NO:** Proceed to data collection.
-
-### 2. Data Collection
-- Capture real-time camera data to analyze the surroundings.
-- Detect environmental features (walls, objects, magnets, lines).
-
-### 3. Object and Obstacle Handling
-- **Red/Green Object Detection:**
-  - If detected, determine object positions relative to the robot.
-  - For a single object: Register position (left/right) and adjust path.
-  - For two objects:
-    - Compute the distance between them.
-    - **If gap feasible:** Navigate between objects using reverse PID.
-    - **If gap not feasible:** Trigger a pre-set parking algorithm.
-- **Magnet Detection:**
-  - If magnets are detected, apply PID logic to center the robot.
-
-### 4. Wall Following
-- **Black Wall Detection:**
-  - **If walls detected:** Apply PID logic to center between two walls.
-  - **If no walls detected:** Apply PID to follow a single wall, keeping error = 0.
-
-### 5. Navigation and Control
-- Continuously use PID to:
-  - Maintain drive system stability.
-  - Adjust direction dynamically.
-  - Ensure smooth motor operation during transitions.
-
-### 6. Line Detection and Round Management
-- Use color sensor to detect orange/blue lines (checkpoints).
-- Upon detection:
-  - **If value detected:** Keep `Round_Count` unchanged; keep sensor active.
-  - **If no value detected:** Increment `Round_Count` by 1 and disable sensor for a fixed time.
-
----
-
-##  Key Algorithms
-
-1. **PID Wall Following:**
-   Maintains robot alignment with reference walls or center path.
-2. **Reverse PID Obstacle Navigation:**
-   Used for moving between detected objects or obstacle pairs.
-3. **Round Counter Management:**
-   Tracks progress and manages sensor activation.
-
----
-
-##  Termination
-The system stops once `Round_Count >= 24`, signaling the completion of all operational rounds.
-
----
-
-##  Notes
-This strategy was developed to ensure robust navigation and adaptability to dynamic environments during autonomous operation.
+Obstacle Challenge Strategy
+For the Obstacle Challenge, the robot begins within the parking zone and determines its initial direction based on black wall detection before exiting. During navigation, its vision system identifies red and green obstacles, steering right in the presence of red and left for green, while simultaneously applying wall-following and line detection for lap counting. After completing three laps, the robot performs an additional alignment lap to optimise its parking approach. Using IR sensors for accurate wall distance measurement and IMU-based angle corrections, the robot executes a reliable parallel parking sequence between two boundaries to conclude the challenge.
 
 ## Code
 
 ## Special Thanks
+We are extremely grateful to our mentor, Mr. Sunil Solanki, for his invaluable guidance, encouragement, and belief in our abilities throughout this journey. His mentorship has been the driving force behind our learning and progress. We would also like to express our sincere gratitude to the honourable and venerable judges for giving us the privilege to present our work before such a distinguished panel. Your time, expertise, and dedication to this competition mean the world to us. It is an incredible honour to have our efforts reviewed by such esteemed individuals, and we deeply value this opportunity to showcase our passion, creativity, and hard work in robotics under your guidance.
