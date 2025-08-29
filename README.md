@@ -126,7 +126,6 @@ The Open Challenge begins with the robot aligning to the nearest wall and determ
 Obstacle Challenge Strategy
 For the Obstacle Challenge, the robot begins within the parking zone and determines its initial direction based on black wall detection before exiting. During navigation, its vision system identifies red and green obstacles, steering right in the presence of red and left for green, while simultaneously applying wall-following and line detection for lap counting. After completing three laps, the robot performs an additional alignment lap to optimise its parking approach. Using IR sensors for accurate wall distance measurement and IMU-based angle corrections, the robot executes a reliable parallel parking sequence between two boundaries to conclude the challenge.
 
-## Code
 
 ## Special Thanks
 We are extremely grateful to our mentor, Mr. Sunil Solanki, for his invaluable guidance, encouragement, and belief in our abilities throughout this journey. His mentorship has been the driving force behind our learning and progress. We would also like to express our sincere gratitude to the honourable and venerable judges for giving us the privilege to present our work before such a distinguished panel. Your time, expertise, and dedication to this competition mean the world to us. It is an incredible honour to have our efforts reviewed by such esteemed individuals, and we deeply value this opportunity to showcase our passion, creativity, and hard work in robotics under your guidance.
