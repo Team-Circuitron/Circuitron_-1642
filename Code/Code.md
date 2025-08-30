@@ -1,5 +1,5 @@
-Below is the Obstacle Challenge Code and its explanation: 
-
+ Below is the Obstacle Challenge Code and its explanation: 
+---
 from picamera2 import Picamera2
 
 import cv2
@@ -17,7 +17,7 @@ import board
 import adafruit_bno055
 
 import RPi.GPIO as GPIO
-
+---
 [The above consists of all the libraries and modules utilised by the team in the code. 
 
 Picamera2: Allows us to communicate with the Picam 3 and set values such as exposure and frame rate
