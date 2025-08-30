@@ -3,7 +3,7 @@ Detailed overview of the hardware architecture of our WRO Future Engineers robot
 
 ---
 
-## 📑 Table of Contents
+##  Table of Contents
 - [Overview](#overview)
 - [Hardware Overview](#hardware-overview)
   - [Processing Unit](#processing-unit)
@@ -192,5 +192,5 @@ The lego chassis is completly custom designed from scratch, and we found it was 
 
 
 ##CAD and Lego
-The instructions to build our robot have been given in this repository [📄 Robot Assembly Instructions](Robot_Assembly_Instructions.pdf). We have also attached an Excel sheet containing all the LEGO parts required to make the robot. We have also attached the CAD files, the cover and the custom housing in this repository. The complete CAD of the robot is also attached in a .io file format, as the cad was made in lego studio. The cad for the custom parts is given in STEP format, as that was made in onshape.
+The instructions for building our robot are provided in this repository [📄 Robot Assembly Instructions](Robot_Assembly_Instructions.pdf). We have also attached an Excel sheet containing all the LEGO parts required to make the robot. We have also attached the CAD files, the cover and the custom housing in this repository. The complete CAD of the robot is also attached in a .io file format, as the CAD was made in LEGO Studio. The cad for the custom parts is given in STEP format, as that was made in onshape.
  
